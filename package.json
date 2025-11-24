@@ -1,26 +1,62 @@
 {
-  "name": "creem-sdk",
-  "version": "0.1.0",
-  "private": true,
+  "name": "creem",
+  "version": "0.4.0",
+  "description": "Official Creem SDK for JavaScript & TypeScript - Universal payment integration for any framework",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "next": "16.0.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
-  },
+  "keywords": [
+    "creem",
+    "payments",
+    "subscriptions",
+    "sdk",
+    "api",
+    "typescript",
+    "javascript",
+    "checkout",
+    "webhooks",
+    "licenses",
+    "billing",
+    "saas"
+  ],
+  "author": "Creem",
+  "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.3",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/creem-io/creem-sdk"
+  },
+  "homepage": "https://creem.io",
+  "bugs": {
+    "url": "https://github.com/creem-io/creem-sdk/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
+
